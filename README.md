@@ -7,10 +7,12 @@ La aplicación contiene los servicios rest necesarios para manipular informació
 de continentes, paises y ciudades que son utilizados por la aplicación SPA "THE GEO APP CLIENT",
 desarrollada en dos versiones diferentes, con los frameworks Angular y React:
 
-THE (ANGULAR) GEO APP CLIENT
+**THE (ANGULAR) GEO APP CLIENT**
+
 https://github.com/edgar-code-repository/angular-geo-app-client
 
-THE (REACT) GEO APP CLIENT
+**THE (REACT) GEO APP CLIENT**
+
 https://github.com/edgar-code-repository/react-geo-app-client
 
 ------------------------------------------------------------------------------------------------------
