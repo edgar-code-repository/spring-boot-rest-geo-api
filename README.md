@@ -8,6 +8,12 @@ used from an Angular app.
 
 ------------------------------------------------------------------------------------------------------
 
+POST call to save a new continent from Postman:
+
+![Screenshot PostmanPostContinent](screenshots/post-continent.png)
+
+------------------------------------------------------------------------------------------------------
+
 GET call to continents endpoint from Postman:
 
 ![Screenshot PostmanGetContinents](screenshots/get-continents.png)
