@@ -10,7 +10,7 @@ used from an Angular app.
 
 GET call to continents endpoint from Postman:
 
-![Screenshot Main](screenshots/continents_get_call.png)
+![Screenshot PostmanGetContinents](screenshots/get-continents.png)
 
 ------------------------------------------------------------------------------------------------------
 
