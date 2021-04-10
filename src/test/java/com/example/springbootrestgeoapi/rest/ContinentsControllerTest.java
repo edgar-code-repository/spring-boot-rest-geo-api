@@ -54,7 +54,7 @@ public class ContinentsControllerTest {
         String strResponse = resultCreate.getResponse().getContentAsString();
         continentForTest = mapper.readValue(resultCreate.getResponse().getContentAsString(), Continent.class);
 
-        assertNotNull(continentForTest.getId());
+        assertNotNull(continentForTest.getCode());
         assertTrue(continentForTest.getName().equals(continentName));
 
         logger.info("[ContinentsControllerTest][testContinentsController][strResponse: " + strResponse + "]");
@@ -65,7 +65,7 @@ public class ContinentsControllerTest {
 
         MvcResult resultsGetOne = mvc.perform
             (
-                get(BASE_URL + continentForTest.getId())
+                get(BASE_URL + continentForTest.getCode())
                 .accept(MediaType.APPLICATION_JSON)
             )
                 .andReturn();
@@ -80,7 +80,7 @@ public class ContinentsControllerTest {
         logger.info("[ContinentsControllerTest][testContinentsController][continentForTest: " + continentForTest + "]");
 
         logger.info("[ContinentsControllerTest][testContinentsController][Updating continent...]");
-        logger.info("[ContinentsControllerTest][testContinentsController][Continent id: " + continentForTest.getId() + "]");
+        logger.info("[ContinentsControllerTest][testContinentsController][Continent id: " + continentForTest.getCode() + "]");
 
 
         continentName = "The Pangea Continent";
@@ -89,7 +89,7 @@ public class ContinentsControllerTest {
         continentJson = mapper.writeValueAsString(continentForTest);
 
         MvcResult resultsUpdate = mvc.perform(
-            put(BASE_URL + continentForTest.getId())
+            put(BASE_URL + continentForTest.getCode())
             .content(continentJson)
             .contentType(MediaType.APPLICATION_JSON)
             .accept(MediaType.APPLICATION_JSON)
@@ -121,10 +121,10 @@ public class ContinentsControllerTest {
         logger.info("[ContinentsControllerTest][testContinentsController][Continents count: " + continentsList.length + "]");
 
 
-        logger.info("[ContinentsControllerTest][testContinentsController][Deleting continent - id: " + continentForTest.getId() + "]");
+        logger.info("[ContinentsControllerTest][testContinentsController][Deleting continent - id: " + continentForTest.getCode() + "]");
 
         MvcResult resultDelete = mvc.perform(
-            delete(BASE_URL + continentForTest.getId())
+            delete(BASE_URL + continentForTest.getCode())
             )
                 .andExpect(status().isOk())
                 .andReturn();

@@ -9,6 +9,8 @@ public class Continent {
     @Id
     private String id;
 
+    private String code;
+
     private String name;
 
     public Continent() {
@@ -18,8 +20,8 @@ public class Continent {
         this.name = name;
     }
 
-    public Continent(String id, String name) {
-        this.id = id;
+    public Continent(String code, String name) {
+        this.code = code;
         this.name = name;
     }
 
@@ -29,6 +31,14 @@ public class Continent {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {
@@ -44,6 +54,7 @@ public class Continent {
 
         str = "Continent [";
         str = str + "Id: " + this.id + " - ";
+        str = str + "Code: " + this.code + " - ";
         str = str + "Name: " + this.name + "]\n";
 
         return str;

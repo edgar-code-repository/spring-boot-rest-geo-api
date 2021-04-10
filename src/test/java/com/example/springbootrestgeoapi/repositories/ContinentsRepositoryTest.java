@@ -34,25 +34,25 @@ public class ContinentsRepositoryTest {
         continent2 = new Continent("Asia");
         continent3 = new Continent("Africa");
 
-        assertNull(continent1.getId());
-        assertNull(continent2.getId());
-        assertNull(continent3.getId());
+        assertNull(continent1.getCode());
+        assertNull(continent2.getCode());
+        assertNull(continent3.getCode());
 
         continentsRepository.save(continent1);
         continentsRepository.save(continent2);
         continentsRepository.save(continent3);
 
-        assertNotNull(continent1.getId());
-        assertNotNull(continent2.getId());
-        assertNotNull(continent3.getId());
+        assertNotNull(continent1.getCode());
+        assertNotNull(continent2.getCode());
+        assertNotNull(continent3.getCode());
 
     }
 
     @After
     public void tearDown() throws Exception {
-        continentsRepository.deleteById(continent1.getId());
-        continentsRepository.deleteById(continent2.getId());
-        continentsRepository.deleteById(continent3.getId());
+        continentsRepository.deleteById(continent1.getCode());
+        continentsRepository.deleteById(continent2.getCode());
+        continentsRepository.deleteById(continent3.getCode());
     }
 
     @Test

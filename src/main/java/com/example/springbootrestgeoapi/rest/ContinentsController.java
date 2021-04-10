@@ -45,28 +45,23 @@ public class ContinentsController {
         return continent;
     }
 
-    @GetMapping("/continents/{id}")
-    public Continent getContinentById(@PathVariable("id") String id) {
+    @GetMapping("/continents/{code}")
+    public Continent getContinentById(@PathVariable("code") String code) {
         logger.info("[ContinentsController][getContinentById][START]");
 
-        Continent continent = null;
-        Optional<Continent> optionalContinent = continentsRepository.findById(id);
-        if (optionalContinent.isPresent()) {
-            continent = optionalContinent.get();
+        Continent continent = continentsRepository.findByCode(code);
+        if (continent != null) {
             logger.info("[ContinentsController][getContinentById][continent retrieved: " + continent.toString() + "]");
-        }
-        else {
-            logger.info("[ContinentsController][getContinentById][continent not found]");
         }
 
         logger.info("[ContinentsController][getContinentById][END]");
         return continent;
     }
 
-    @PutMapping("/continents/{id}")
-    public Continent updateContinent(@PathVariable("id") String id, @Valid @RequestBody Continent continent) {
+    @PutMapping("/continents/{code}")
+    public Continent updateContinent(@PathVariable("code") String code, @Valid @RequestBody Continent continent) {
         logger.info("[ContinentsController][updateContinent][START]");
-        logger.info("[ContinentsController][updateContinent][id: " + id + "]");
+        logger.info("[ContinentsController][updateContinent][code: " + code + "]");
         logger.info("[ContinentsController][updateContinent][continent parameter: " + continent.toString() + "]");
 
         continent = continentsRepository.save(continent);
@@ -77,17 +72,15 @@ public class ContinentsController {
         return continent;
     }
 
-    @DeleteMapping("/continents/{id}")
-    public boolean deleteContinent(@PathVariable("id") String id) {
+    @DeleteMapping("/continents/{code}")
+    public boolean deleteContinent(@PathVariable("code") String code) {
         logger.info("[ContinentsController][deleteContinent][START]");
-        logger.info("[ContinentsController][deleteContinent][id: " + id + "]");
+        logger.info("[ContinentsController][deleteContinent][code: " + code + "]");
 
         boolean flag = false;
-        Continent continent = null;
 
-        Optional<Continent> optionalContinent = continentsRepository.findById(id);
-        if (optionalContinent.isPresent()) {
-            continent = optionalContinent.get();
+        Continent continent = continentsRepository.findByCode(code);
+        if (continent != null) {
             continentsRepository.delete(continent);
             flag = true;
         }
