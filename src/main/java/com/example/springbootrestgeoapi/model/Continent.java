@@ -11,8 +11,6 @@ public class Continent {
     @Id
     private String id;
 
-    private String code;
-
     private String name;
 
     public Continent() {
@@ -27,7 +25,6 @@ public class Continent {
 
         str = "Continent [";
         str = str + "Id: " + this.id + " - ";
-        str = str + "Code: " + this.code + " - ";
         str = str + "Name: " + this.name + "]\n";
 
         return str;
