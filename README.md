@@ -33,15 +33,15 @@ Dependencies in POM file:
 
 ------------------------------------------------------------------------------------------------------
 
-POST call to save a new continent from Postman:
+GET call to retrieve all continents:
 
-![Screenshot PostmanPostContinent](screenshots/post-continent.png)
+![Screenshot PostmanGetContinents](screenshots/get-continents.png)
 
 ------------------------------------------------------------------------------------------------------
 
-GET call to continents endpoint from Postman:
+GET call to retrieve all countries:
 
-![Screenshot PostmanGetContinents](screenshots/get-continents.png)
+![Screenshot PostmanGetContinents](screenshots/get-countries.png)
 
 ------------------------------------------------------------------------------------------------------
 
