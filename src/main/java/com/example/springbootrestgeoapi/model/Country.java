@@ -13,6 +13,8 @@ public class Country {
     @Id
     private String id;
     private String name;
+    private String capital;
+    private long population;
     private Continent continent;
 
     public String toString() {
@@ -21,6 +23,8 @@ public class Country {
         str = "Country [";
         str = str + "Id: " + this.id + " - ";
         str = str + "Name: " + this.name + "]\n";
+        str = str + "Capital: " + this.capital + "]\n";
+        str = str + "Population: " + this.population + "]\n";
         str = str + "Continent: " + this.continent + "]\n";
 
         return str;
